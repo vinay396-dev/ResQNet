@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Rescue Platform(ResQNet)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-paw"></i>
+                Animal Rescue Network
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="home-link">🏠 Home</a></li>
+                    <li><a href="#" class="about-link">ℹ️ About</a></li>
+                    <li><a href="#" class="login-link">🔐 Login</a></li>
+                    <li><a href="#" class="signup-link">📝 Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section with Slogans -->
+        <div class="hero">
+            <div class="hero-content">
+                <!-- Alternating Slogans -->
+                <div class="slogans-container">
+                    <div class="slogan active" id="slogan-1">
+                        <p class="slogan-text">🐾 RESCUE ANIMALS - SAVE LIVES 🐾</p>
+                    </div>
+                    <div class="slogan" id="slogan-2">
+                        <p class="slogan-text">Every Animal Deserves a Second Chance</p>
+                    </div>
+                </div>
+
+                <!-- Main Title -->
+                <h1>Help Animals in Need</h1>
+                <p>Report injured or distressed animals and connect with NGOs for immediate assistance</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-hero start-rescuing-btn">🚀 Start Rescuing</button>
+                    <button class="btn btn-hero-secondary learn-more-btn">📚 Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animal Action Cards Section (BMW-style) -->
+        <div class="animal-actions-section">
+            <h2 class="section-heading">Find Your Way to Help Animals</h2>
+            <div class="animal-cards-container">
+                <!-- Card 1: Report Animal -->
+                <div class="animal-action-card">
+                    <div class="animal-icon-container">
+                        <svg class="animal-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dog silhouette - lying down -->
+                            <circle cx="100" cy="100" r="45" fill="#3498db" opacity="0.2"/>
+                            <!-- Dog body (lying position) -->
+                            <ellipse cx="100" cy="110" rx="35" ry="25" fill="#3498db"/>
+                            <!-- Dog head -->
+                            <ellipse cx="75" cy="105" rx="20" ry="22" fill="#3498db"/>
+                            <!-- Dog ear -->
+                            <ellipse cx="65" cy="95" rx="8" ry="12" fill="#2980b9"/>
+                            <!-- Dog snout -->
+                            <ellipse cx="60" cy="105" rx="8" ry="6" fill="#2980b9"/>
+                            <!-- Eye -->
+                            <circle cx="68" cy="100" r="3" fill="#fff"/>
+                            <!-- Paws -->
+                            <ellipse cx="85" cy="125" rx="6" ry="8" fill="#2980b9"/>
+                            <ellipse cx="115" cy="125" rx="6" ry="8" fill="#2980b9"/>
+                            <!-- Checkmark -->
+                            <path d="M125 85 L135 95 L155 75" stroke="#27ae60" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Report an Animal in Need</h3>
+                    <p>Spot a distressed animal? Report it instantly with photos and location.</p>
+                </div>
+
+                <!-- Card 2: Join Mission -->
+                <div class="animal-action-card">
+                    <div class="animal-icon-container">
+                        <svg class="animal-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background circle -->
+                            <circle cx="100" cy="100" r="45" fill="#27ae60" opacity="0.2"/>
+                            <!-- Dog -->
+                            <ellipse cx="70" cy="120" rx="15" ry="18" fill="#3498db"/>
+                            <ellipse cx="70" cy="135" rx="10" ry="12" fill="#3498db"/>
+                            <circle cx="65" cy="115" r="3" fill="#fff"/>
+                            <!-- Cat -->
+                            <ellipse cx="100" cy="110" rx="12" ry="15" fill="#e74c3c"/>
+                            <path d="M95 110 Q90 105, 95 100 Q100 95, 105 100 Q110 105, 105 110" fill="#e74c3c"/>
+                            <circle cx="97" cy="108" r="2" fill="#fff"/>
+                            <!-- Bird -->
+                            <ellipse cx="130" cy="90" rx="8" ry="10" fill="#f39c12"/>
+                            <path d="M125 90 Q120 85, 125 80" stroke="#f39c12" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <path d="M135 90 Q140 85, 135 80" stroke="#f39c12" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <circle cx="128" cy="88" r="2" fill="#fff"/>
+                            <!-- Tree/leaf icon -->
+                            <path d="M140 130 Q135 120, 140 115 Q145 110, 140 105 Q135 100, 140 105 Q145 110, 150 115 Q155 120, 150 130 Q145 125, 140 130" fill="#27ae60"/>
+                            <rect x="138" y="130" width="4" height="15" fill="#8b4513"/>
+                        </svg>
+                    </div>
+                    <h3>Join Our Mission</h3>
+                    <p>Become a rescuer and make a difference in animal welfare.</p>
+                </div>
+
+                <!-- Card 3: Track Progress -->
+                <div class="animal-action-card">
+                    <div class="animal-icon-container">
+                        <svg class="animal-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background circle -->
+                            <circle cx="100" cy="100" r="45" fill="#e74c3c" opacity="0.15"/>
+                            <!-- Heart -->
+                            <path d="M100 70 Q85 60, 80 75 Q80 85, 90 95 L100 105 L110 95 Q120 85, 120 75 Q115 60, 100 70" fill="#e74c3c"/>
+                            <!-- Paw print in heart -->
+                            <circle cx="100" cy="85" r="7" fill="#fff"/>
+                            <circle cx="92" cy="93" r="5" fill="#fff"/>
+                            <circle cx="108" cy="93" r="5" fill="#fff"/>
+                            <circle cx="95" cy="97" r="5" fill="#fff"/>
+                            <circle cx="105" cy="97" r="5" fill="#fff"/>
+                            <!-- Water wave below -->
+                            <path d="M70 115 Q80 120, 90 115 T110 115 T130 115 T150 115" stroke="#3498db" stroke-width="3" fill="none"/>
+                            <path d="M75 125 Q85 130, 95 125 T115 125 T135 125 T155 125" stroke="#3498db" stroke-width="3" fill="none" opacity="0.7"/>
+                            <!-- Small rescue boat -->
+                            <path d="M140 120 L160 120 L155 125 L145 125 Z" fill="#fff" opacity="0.8"/>
+                            <line x1="150" y1="120" x2="150" y2="110" stroke="#fff" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Track Rescue Progress</h3>
+                    <p>Monitor your reports and see successful rescues in action.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Impact Stats Section (Better than running dogs) -->
+        <div class="impact-stats-section">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon">🐕</div>
+                    <div class="stat-number" data-target="1250">0</div>
+                    <div class="stat-label">Animals Rescued</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number" data-target="850">0</div>
+                    <div class="stat-label">Active Rescuers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-number" data-target="3200">0</div>
+                    <div class="stat-label">Reports Submitted</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">Success Rate %</div>
+                </div>
+            </div>
+            <p class="impact-message">Together, we're making a real difference in animal welfare, one rescue at a time.</p>
+        </div>
+
+        <!-- User Type Selection (Hidden by default) -->
+        <div class="user-type-selection" id="user-type-selection" style="display: none;">
+            <div class="user-card">
+                <i class="fas fa-user"></i>
+                <h3>👤 User</h3>
+                <p>Report animals in distress and track your submissions</p>
+                <button class="btn user-btn">Continue as User</button>
+            </div>
+            <div class="user-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>🏢 NGO</h3>
+                <p>Respond to animal rescue requests and manage cases</p>
+                <button class="btn ngo-btn">Continue as NGO</button>
+            </div>
+        </div>
+
+        <!-- Login Selection Modal -->
+        <div id="login-selection-modal" class="modal">
+            <div class="modal-content modal-medium">
+                <span class="close">&times;</span>
+                <h2>🔐 Login</h2>
+                <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Choose your login type</p>
+                
+                <div class="login-options">
+                    <button class="btn btn-option" id="user-login-option">
+                        <i class="fas fa-user"></i>
+                        <span>User Login</span>
+                    </button>
+                    <button class="btn btn-option" id="ngo-login-option">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>NGO Login</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sign Up Selection Modal -->
+        <div id="signup-selection-modal" class="modal">
+            <div class="modal-content modal-medium">
+                <span class="close">&times;</span>
+                <h2>📝 Sign Up</h2>
+                <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Choose your registration type</p>
+                
+                <div class="login-options">
+                    <button class="btn btn-option" id="user-signup-option">
+                        <i class="fas fa-user"></i>
+                        <span>User Registration</span>
+                    </button>
+                    <button class="btn btn-option" id="ngo-signup-option">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>NGO Registration</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Modal -->
+        <div id="about-modal" class="modal">
+            <div class="modal-content modal-large">
+                <span class="close">&times;</span>
+                <h2>ℹ️ About Animal Rescue Platform</h2>
+                
+                <div class="about-content">
+                    <div class="about-section">
+                        <h3>🎯 Our Mission</h3>
+                        <p>To create a bridge between compassionate citizens and animal rescue organizations, enabling rapid response to animal distress calls and ensuring every injured or distressed animal receives timely help.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h3>❓ Why Animal Rescue?</h3>
+                        <p>Every day, countless animals face suffering on our streets. Stray dogs, cats, birds, and other animals often go unnoticed and untreated. Our platform empowers ordinary people to become heroes for these voiceless creatures by easily reporting incidents to professional rescue organizations.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h3>🌟 Our Vision</h3>
+                        <p>A world where no animal suffers alone. We envision a community united in compassion, where rescue teams can respond quickly to emergencies, and where every life—human or animal—is valued and protected.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h3>🚀 How It Works</h3>
+                        <ol style="margin-left: 20px;">
+                            <li><strong>Report:</strong> Users spot an animal in distress and report it with photos and location</li>
+                            <li><strong>Verify:</strong> NGOs review reports and verify the incidents</li>
+                            <li><strong>Rescue:</strong> Trained rescue teams respond immediately</li>
+                            <li><strong>Care:</strong> Animals receive medical attention and rehabilitation</li>
+                            <li><strong>Remember:</strong> Users keep memories of successful rescues</li>
+                        </ol>
+                    </div>
+
+                    <div class="about-section">
+                        <h3>👥 Our Team</h3>
+                        <p>We are a dedicated group of animal lovers and developers committed to making animal rescue accessible to everyone. Our team works tirelessly to ensure that technology serves compassion.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h3>💡 Key Features</h3>
+                        <ul style="margin-left: 20px;">
+                            <li>📸 Real-time photo capture and upload</li>
+                            <li>🗺️ GPS location tracking</li>
+                            <li>⚡ Instant NGO notifications</li>
+                            <li>📊 Rescue statistics and tracking</li>
+                            <li>⭐ User feedback and ratings</li>
+                            <li>🎉 Memory gallery of successful rescues</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Registration Form -->
+        <div class="form-container" id="user-registration">
+            <h2>👤 User Registration</h2>
+            <form id="user-registration-form">
+                <div class="form-group">
+                    <label for="user-name">Full Name</label>
+                    <input type="text" id="user-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-phone">Phone Number</label>
+                    <input type="tel" id="user-phone" placeholder="Enter phone number (e.g., 9876543210)" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-password">Password</label>
+                    <input type="password" id="user-password" placeholder="Enter password" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-confirm-password">Confirm Password</label>
+                    <input type="password" id="user-confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <button type="button" class="btn back-btn back-to-selection">Back</button>
+            </form>
+        </div>
+
+        <!-- User Login Form -->
+        <div class="form-container" id="user-login">
+            <h2>🔐 User Login</h2>
+            <form id="user-login-form">
+                <div class="form-group">
+                    <label for="user-login-phone">Phone Number</label>
+                    <input type="tel" id="user-login-phone" placeholder="Enter phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-login-password">Password</label>
+                    <input type="password" id="user-login-password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn back-btn back-to-selection">Back</button>
+            </form>
+        </div>
+
+        <!-- NGO Registration Form -->
+        <div class="form-container" id="ngo-registration">
+            <h2>🏢 NGO Registration</h2>
+            <form id="ngo-registration-form">
+                <div class="form-group">
+                    <label for="ngo-id">NGO ID</label>
+                    <input type="text" id="ngo-id" value="ARF2025" required>
+                </div>
+                <div class="form-group">
+                    <label for="ngo-phone">Phone Number</label>
+                    <input type="tel" id="ngo-phone" value="9876543211" required>
+                </div>
+                <div class="form-group">
+                    <label for="ngo-password">Password</label>
+                    <input type="password" id="ngo-password" placeholder="Enter NGO password" required>
+                </div>
+                <div class="form-group">
+                    <label for="ngo-confirm-password">Confirm Password</label>
+                    <input type="password" id="ngo-confirm-password" placeholder="Confirm NGO password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <button type="button" class="btn back-btn back-to-selection">Back</button>
+            </form>
+        </div>
+
+        <!-- NGO Login Form -->
+        <div class="form-container" id="ngo-login">
+            <h2>🏢 NGO Login</h2>
+            <form id="ngo-login-form">
+                <div class="form-group">
+                    <label for="ngo-login-id">NGO ID</label>
+                    <input type="text" id="ngo-login-id" value="ARF2025" required>
+                </div>
+                <div class="form-group">
+                    <label for="ngo-login-phone">Phone Number</label>
+                    <input type="tel" id="ngo-login-phone" value="9876543211" required>
+                </div>
+                <div class="form-group">
+                    <label for="ngo-login-password">Password</label>
+                    <input type="password" id="ngo-login-password" placeholder="Enter NGO password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn back-btn back-to-selection">Back</button>
+            </form>
+        </div>
+
+        <!-- User Dashboard -->
+        <div class="dashboard" id="user-dashboard">
+            <!-- User Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="menu-content">
+                    <div class="menu-item active" id="user-dashboard-btn">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="menu-item" id="user-profile-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </div>
+                    <div class="menu-item" id="user-activities-btn">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Your Activities</span>
+                    </div>
+                    <div class="menu-item" id="user-memories-btn">
+                        <i class="fas fa-images"></i>
+                        <span>Memories</span>
+                    </div>
+                    <div class="menu-item" id="user-logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <!-- Dashboard Page -->
+                <div class="page active" id="user-dashboard-page">
+                    <div class="dashboard-header">
+                        <h2>👤 User Dashboard</h2>
+                        <div class="user-info">
+                            <span id="user-welcome">Welcome, User!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h3>📋 Report an Animal in Distress</h3>
+                        <div class="upload-area" id="upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Upload Photo or Take Picture</p>
+                            <input type="file" id="file-input" accept="image/*" style="display: none;">
+                            <div class="upload-buttons">
+                                <button class="btn" id="choose-file-btn">📁 Choose File</button>
+                                <button class="btn" id="take-photo-btn">📷 Take Photo</button>
+                            </div>
+                            <p id="file-name">No file chosen</p>
+                            <div id="photo-preview" class="photo-preview" style="display: none;">
+                                <img id="preview-img" src="" alt="Preview">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="animal-type">Animal Type</label>
+                                <select id="animal-type">
+                                    <option value="">Select animal type</option>
+                                    <option value="dog">🐕 Dog</option>
+                                    <option value="cat">🐱 Cat</option>
+                                    <option value="bird">🦜 Bird</option>
+                                    <option value="cow">🐄 Cow</option>
+                                    <option value="other">❓ Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="animal-condition">Animal's Condition</label>
+                                <select id="animal-condition">
+                                    <option value="">Select condition</option>
+                                    <option value="injured">🩹 Injured</option>
+                                    <option value="sick">🤒 Sick</option>
+                                    <option value="stranded">🆘 Stranded</option>
+                                    <option value="abandoned">😢 Abandoned</option>
+                                    <option value="malnourished">🍽️ Malnourished</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">📍 Location</label>
+                            <input type="text" id="location" placeholder="Address or click to detect">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">📝 Description Note</label>
+                            <textarea id="description" placeholder="Add additional details about the animal's condition and situation" rows="4"></textarea>
+                        </div>
+                        
+                        <div id="map-container">
+                            <div id="map"></div>
+                        </div>
+                        
+                        <button class="btn" id="detect-location-btn">📍 Detect My Location on Map</button>
+                        <button class="btn btn-success" id="submit-report-btn">✅ Submit Report</button>
+                    </div>
+                    
+                    <div class="notification-section">
+                        <h3>📢 Your Recent Reports</h3>
+                        <div class="notification-list" id="user-notifications">
+                            <!-- User notifications will appear here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Page -->
+                <div class="page" id="user-profile-page">
+                    <h3>👤 User Profile</h3>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="profile-name" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" id="profile-phone" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Reports Submitted</label>
+                        <input type="text" id="profile-reports" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Rescues Completed</label>
+                        <input type="text" id="profile-rescues" readonly>
+                    </div>
+                </div>
+
+                <!-- Activities Page -->
+                <div class="page" id="user-activities-page">
+                    <h3>📋 Your Activities</h3>
+                    <div class="notification-list" id="user-activities">
+                        <!-- User activities will appear here -->
+                    </div>
+                </div>
+
+                <!-- Memories Page -->
+                <div class="page" id="user-memories-page">
+                    <h3>🎉 Your Memories</h3>
+                    <p>All your successful rescues and happy moments</p>
+                    <div class="memory-grid" id="user-memories">
+                        <!-- User memories will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NGO Dashboard -->
+        <div class="dashboard" id="ngo-dashboard">
+            <!-- NGO Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="menu-content">
+                    <div class="menu-item active" id="ngo-dashboard-btn">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="menu-item" id="ngo-details-btn">
+                        <i class="fas fa-info-circle"></i>
+                        <span>NGO Details</span>
+                    </div>
+                    <div class="menu-item" id="rescue-stats-btn">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Rescue Statistics</span>
+                    </div>
+                    <div class="menu-item" id="ngo-logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <!-- NGO Dashboard Page -->
+                <div class="page active" id="ngo-dashboard-page">
+                    <div class="dashboard-header">
+                        <h2>🏢 NGO Dashboard</h2>
+                        <div class="ngo-info">
+                            <span id="rescue-count">Rescues Completed: 0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-section">
+                        <h3>🆘 Rescue Requests</h3>
+                        <div class="notification-list" id="ngo-notifications">
+                            <!-- NGO notifications will appear here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGO Details Page -->
+                <div class="page" id="ngo-details-page">
+                    <h3>🏢 NGO Details</h3>
+                    <div class="form-group">
+                        <label>NGO Name</label>
+                        <input type="text" id="ngo-detail-name" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>NGO ID</label>
+                        <input type="text" id="ngo-detail-id" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="text" id="ngo-detail-phone" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea id="ngo-detail-address" rows="3" readonly>123 Rescue Street, Animal City, AC 12345</textarea>
+                    </div>
+                </div>
+
+                <!-- Rescue Statistics Page -->
+                <div class="page" id="rescue-stats-page">
+                    <h3>📊 Rescue Statistics</h3>
+                    <div class="form-group">
+                        <label>Total Rescues Completed</label>
+                        <input type="text" id="stats-total" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Pending Requests</label>
+                        <input type="text" id="stats-pending" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Verified Reports</label>
+                        <input type="text" id="stats-verified" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Success Rate</label>
+                        <input type="text" id="stats-success" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Camera Modal -->
+        <div id="camera-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>📸 Take Photo for Report</h3>
+                <div id="camera-status" style="text-align: center; color: #3498db; margin-bottom: 10px; font-weight: bold;">
+                    Initializing camera...
+                </div>
+                <video id="camera-preview" autoplay playsinline></video>
+                <canvas id="camera-canvas" style="display: none;"></canvas>
+                <div class="camera-controls">
+                    <button class="btn" id="capture-btn" style="display: none;">📷 Capture Photo</button>
+                    <button class="btn" id="retake-btn" style="display: none;">🔄 Retake</button>
+                    <button class="btn" id="use-photo-btn" style="display: none;">✅ Use This Photo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Modal -->
+        <div id="feedback-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>⭐ Rate Your Experience</h3>
+                <p>How was the rescue service provided?</p>
+                <div class="rating-stars">
+                    <span class="star" data-rating="5">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="1">&#9733;</span>
+                </div>
+                <textarea id="feedback-text" placeholder="Additional feedback (optional)" rows="4"></textarea>
+                <button class="btn" id="submit-feedback-btn">Submit Feedback</button>
+            </div>
+        </div>
+
+        <!-- Notification Details Modal -->
+        <div id="notification-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>📋 Report Details</h3>
+                <div id="notification-details">
+                    <!-- Notification details will appear here -->
+                </div>
+                <div class="modal-actions">
+                    <button class="btn" id="verify-report-btn">✅ Mark as Verified</button>
+                    <button class="btn" id="complete-rescue-btn">🎉 Mark as Completed</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo Preview Modal -->
+        <div id="photo-preview-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>📸 Report Photo</h3>
+                <div id="modal-photo-container">
+                    <img id="modal-photo" src="" alt="Report Photo" style="max-width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>📞 Contact Us</h4>
+                    <p>Phone: <strong>+91-7416999514</strong></p>
+                    <p>Phone: <strong>+91-8555858879</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>👥 Team Members</h4>
+                    <p>👨‍💼 <strong>Vinay</strong></p>
+                    <p>👨‍💼 <strong>Charan Teja</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>📧 Email</h4>
+                    <p><strong>animalrescue@gmail.com</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>🌐 Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Animal Rescue Platform. All rights reserved.</p>
+                <p>Made with ❤️ for animal welfare</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Supabase JS (UMD) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.6/dist/umd/supabase.min.js"></script>
+    <script>
+        // Set your Supabase credentials here
+        // Tip: replace with your real project values
+        window.SUPABASE_URL = 'https://vroxmwloumyisozjyjlb.supabase.co';
+        window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZyb3htd2xvdW15aXNvemp5amxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIxMzA3NTUsImV4cCI6MjA4NzcwNjc1NX0.eMK0h5CNOGX7AWE0zBgfCTEDSDHU5UB50SMEsggw0ic';
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
